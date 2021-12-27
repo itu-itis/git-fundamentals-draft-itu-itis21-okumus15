@@ -33,11 +33,22 @@
         </title>
     </head>
 
-    <body>
+    <body   onload="welcomeFunction(); document.body.style.backgroundColor = 'pink' "
+            onresize="document.body.style.backgroundColor = 'lightblue' "
+            
+            onkeydown="document.body.style.backgroundColor='white' "
+            onkeyup="document.body.style.backgroundColor='lightyellow' ">
+
+        <script>
+            function welcomeFunction() {
+                alert("Welcome!");
+            }
+        </script>
+
         <p>
             <strong> Intro 2 Inf Sys </strong>
         </p>
-        <p class = "centered">
+        <p class = "centered" onmouseover="document.querySelector('centered').style.font='bold 20pt arial,serif' ">
             <em>
             Bedirhan Okumuş
             </br>    
@@ -47,26 +58,33 @@
         <p>
         Evolution of homo species
         </p>
-        <ul>
+        <ul id="unorderedL"
+            onmouseover="document.getElementById('unorderedL').style.backgroundColor='purple' ">
 
             <li> Homo habilis (able man) </li>
             <li> Homo erectus (uprigth man) </li>
             <li> Homo neanderthalensis </li>
             <li> Homo floresiensis (hobbit) </li>
             <li> Homo sapiens (wise man) </li>
-        <ul>
+        <ul onclick="document.getElementById('unorderedL').style.backgroundColor='orange'">
             <li> Homo sapiens sapiens </li>
         </ul>
         </ul>
         
-        <h1>
+        <h1 onmouseover="style.color='orange'; style.backgroundColor='lightgreen' "
+            onmouseout="style.color='red'; style.backgroundColor='white' ">
             Human Evolution
         </h1>
-
-        <img src="evolution-diagram.png">
+        
+        <h2>
+            <strong> The clickable image </strong>
+        </h2>
 
         <p>
-            You can find the source of the image by clicking the link: <a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">Biology Online</a>
+            This image is a link, try it. 
+            <a href="https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">
+            <img id="myImg" alt="Evolution diagram" onclick="alert(document.getElementById('myImg').alt)" src="evolution-diagram.png"/>
+            </a>
         </p>
 
     </body>
